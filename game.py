@@ -129,7 +129,7 @@ def gameloop():
 
             gameWindow.fill(white)
             gameWindow.blit(bgimg, (0, 0))
-            text_screen("Score: " + str(score) + "  Hiscore: "+str(hiscore), red, 5, 5)
+            text_screen("Score: " + str(score) + "  High_score: "+str(hiscore), red, 5, 5)
             pygame.draw.rect(gameWindow, red, [food_x, food_y, snake_size, snake_size])
 
             head = []

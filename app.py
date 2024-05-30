@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, render_template
 import subprocess
 
@@ -13,5 +12,6 @@ def start_game():
     subprocess.Popen(["python", "game.py"])
     return "Game Started!"
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
