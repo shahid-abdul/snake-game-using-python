@@ -6,8 +6,6 @@ pygame.mixer.init()
 
 pygame.init()
 
-
-
 # Colors
 white = (255, 255, 255)
 red = (255, 0, 0)
@@ -18,22 +16,19 @@ screen_width = 900
 screen_height = 600
 gameWindow = pygame.display.set_mode((screen_width, screen_height))
 
-#Background Image
+# Background Image
 bgimg = pygame.image.load("snake.jpg")
 bgimg = pygame.transform.scale(bgimg, (screen_width, screen_height)).convert_alpha()
 
-
 # Game Title
-pygame.display.set_caption("SnakesWithHarry")
+pygame.display.set_caption("Snake game using python")
 pygame.display.update()
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 55)
 
-
 def text_screen(text, color, x, y):
     screen_text = font.render(text, True, color)
     gameWindow.blit(screen_text, [x,y])
-
 
 def plot_snake(gameWindow, color, snk_list, snake_size):
     for x,y in snk_list:
@@ -57,8 +52,6 @@ def welcome():
         pygame.display.update()
         clock.tick(60)
 
-
-# Game Loop
 def gameloop():
     # Game specific variables
     exit_game = False
@@ -99,7 +92,6 @@ def gameloop():
                         welcome()
 
         else:
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     exit_game = True
@@ -140,7 +132,6 @@ def gameloop():
             text_screen("Score: " + str(score) + "  Hiscore: "+str(hiscore), red, 5, 5)
             pygame.draw.rect(gameWindow, red, [food_x, food_y, snake_size, snake_size])
 
-
             head = []
             head.append(snake_x)
             head.append(snake_y)
@@ -164,4 +155,5 @@ def gameloop():
 
     pygame.quit()
     quit()
+
 welcome()
